@@ -66,7 +66,7 @@
 			children = (
 				A3F34EB7279771F900A38D5F /* AppDelegate.swift */,
 				A3F34EB9279771F900A38D5F /* SceneDelegate.swift */,
-				A3F34ED72797736E00A38D5F /* HomeView */,
+				A3F34ED72797736E00A38D5F /* Home */,
 				A3F34EC0279771FB00A38D5F /* Assets.xcassets */,
 				A3F34EC2279771FB00A38D5F /* LaunchScreen.storyboard */,
 				A3F34EC5279771FB00A38D5F /* Info.plist */,
@@ -74,17 +74,17 @@
 			path = TableViewWithVIPER;
 			sourceTree = "<group>";
 		};
-		A3F34ED72797736E00A38D5F /* HomeView */ = {
+		A3F34ED72797736E00A38D5F /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				A3F34ED82797826F00A38D5F /* HomeView.storyboard */,
 				A3F34ECB2797735B00A38D5F /* HomeViewController.swift */,
+				A3F34ED82797826F00A38D5F /* HomeView.storyboard */,
+				A3F34ECF2797735B00A38D5F /* HomePresenter.swift */,
 				A3F34ECC2797735B00A38D5F /* HomeInteractor.swift */,
 				A3F34ECD2797735B00A38D5F /* HomeRouter.swift */,
-				A3F34ECF2797735B00A38D5F /* HomePresenter.swift */,
 				A3F34ED02797735B00A38D5F /* HomeProtocols.swift */,
 			);
-			name = HomeView;
+			name = Home;
 			path = ..;
 			sourceTree = "<group>";
 		};

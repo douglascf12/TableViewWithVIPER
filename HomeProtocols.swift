@@ -7,39 +7,36 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: WireFrameProtocol
-
 protocol HomeWireframeProtocol: AnyObject {
-
+    /** Presenter -> Wireframe */
+    static func createHomeModule() -> UIViewController
 }
 
 // MARK: PresenterProtocol
 protocol HomePresenterProtocol: AnyObject {
+    /** View -> Presenter */
+    var view: HomeViewProtocol? { get set }
     var interactor: HomeInteractorInputProtocol? { get set }
+    var router: HomeWireframeProtocol? { get set }
     
     func viewDidLoad()
 }
 
 // MARK: InteractorProtocol
-
 protocol HomeInteractorOutputProtocol: AnyObject {
-
     /** Interactor -> Presenter */
 }
 
 protocol HomeInteractorInputProtocol: AnyObject {
-
-    var presenter: HomeInteractorOutputProtocol? { get set }
-
     /** Presenter -> Interactor */
+    var presenter: HomeInteractorOutputProtocol? { get set }
 }
 
 // MARK: ViewProtocol
-
 protocol HomeViewProtocol: AnyObject {
-
-    var presenter: HomePresenterProtocol? { get set }
-
     /** Presenter -> ViewController */
+    var presenter: HomePresenterProtocol? { get set }
 }

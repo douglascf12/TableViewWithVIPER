@@ -8,19 +8,15 @@
 
 import UIKit
 
-class HomePresenter: HomePresenterProtocol {
+class HomePresenter {
 
     // MARK: - Properties
-    weak private var view: HomeViewProtocol?
+    weak var view: HomeViewProtocol?
     var interactor: HomeInteractorInputProtocol?
-    private let router: HomeWireframeProtocol
+    var router: HomeWireframeProtocol?
+}
 
-    init(interface: HomeViewProtocol, interactor: HomeInteractorInputProtocol?, router: HomeWireframeProtocol) {
-        self.view = interface
-        self.interactor = interactor
-        self.router = router
-    }
-    
+extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
         print("Olá, quem me chamou foi a View")
     }

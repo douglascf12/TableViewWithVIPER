@@ -9,9 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    // MARK: - Properties
     var presenter: HomePresenterProtocol?
-
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
