@@ -13,17 +13,20 @@ class HomeRouter: HomeWireframeProtocol {
     weak var viewController: UIViewController?
 
     static func createHomeModule() -> UIViewController {
-        // Change to get view from storyboard if not using progammatic UI
-        let storyboard: UIStoryboard = UIStoryboard(name: "HomeView", bundle: Bundle.main)
-        let view = storyboard.instantiateViewController(withIdentifier: "homeView") as! HomeViewController
-        let interactor = HomeInteractor()
-        let router = HomeRouter()
-        let presenter = HomePresenter()
-
-        view.presenter = presenter
-        interactor.presenter = presenter
-        router.viewController = view
-
-        return view
+        let storyoard = UIStoryboard(name: "HomeView", bundle: Bundle.main)
+        let view = storyoard.instantiateViewController(withIdentifier: "navigation")
+        
+        if let viewController = view.children.first as? HomeViewController {
+            let interactor = HomeInteractor()
+            let router = HomeRouter()
+            let presenter = HomePresenter()
+            
+            viewController.presenter = presenter
+            interactor.presenter = presenter
+            router.viewController = viewController
+            
+            return viewController
+        }
+        return UIViewController()
     }
 }

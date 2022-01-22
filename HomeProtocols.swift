@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+// MARK: ViewProtocol
+protocol HomeViewProtocol: AnyObject {
+    /** Presenter -> ViewController */
+    var presenter: HomePresenterProtocol? { get set }
+}
+
 // MARK: WireFrameProtocol
 protocol HomeWireframeProtocol: AnyObject {
     /** Presenter -> Wireframe */
@@ -33,10 +39,23 @@ protocol HomeInteractorOutputProtocol: AnyObject {
 protocol HomeInteractorInputProtocol: AnyObject {
     /** Presenter -> Interactor */
     var presenter: HomeInteractorOutputProtocol? { get set }
+    var localDataManager: HomeLocalDataManagerInputProtocol? { get set }
+    var remoteDataManager: HomeRemoteDataManagerInputProtocol? { get set }
 }
 
-// MARK: ViewProtocol
-protocol HomeViewProtocol: AnyObject {
-    /** Presenter -> ViewController */
-    var presenter: HomePresenterProtocol? { get set }
+protocol HomeDataManagerInputProtocol: AnyObject {
+    /** Interactor -> DataManager */
+}
+
+protocol HomeRemoteDataManagerInputProtocol: AnyObject {
+    /** Interactor -> RemoteDataManager */
+    var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
+}
+
+protocol HomeRemoteDataManagerOutputProtocol: AnyObject {
+    /** RemoteDataManager -> Interactor */
+}
+
+protocol HomeLocalDataManagerInputProtocol: AnyObject {
+    /** Interactor -> LocalDataManager */
 }
