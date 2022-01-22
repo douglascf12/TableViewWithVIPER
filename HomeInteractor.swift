@@ -10,7 +10,12 @@ import Foundation
 
 class HomeInteractor: HomeInteractorInputProtocol {
     
+    // MARK: - Properties
     weak var presenter: HomeInteractorOutputProtocol?
     var localDataManager: HomeLocalDataManagerInputProtocol?
     var remoteDataManager: HomeRemoteDataManagerInputProtocol?
+}
+
+extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {
+    // TODO: Implement use case methods
 }

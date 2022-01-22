@@ -17,13 +17,20 @@ class HomeRouter: HomeWireframeProtocol {
         let view = storyoard.instantiateViewController(withIdentifier: "navigation")
         
         if let viewController = view.children.first as? HomeViewController {
-            let interactor = HomeInteractor()
-            let router = HomeRouter()
-            let presenter = HomePresenter()
+            let presenter: HomePresenterProtocol & HomeInteractorOutputProtocol = HomePresenter()
+            let interactor: HomeInteractorInputProtocol & HomeRemoteDataManagerOutputProtocol = HomeInteractor()
+            let localDataManager: HomeLocalDataManagerInputProtocol = HomeLocalDataManager()
+            let remoteDataManaher: HomeRemoteDataManagerInputProtocol = HomeRemoteDataManager()
+            let router: HomeWireframeProtocol = HomeRouter()
             
             viewController.presenter = presenter
+            presenter.view = viewController
+            presenter.router = router
+            presenter.interactor = interactor
             interactor.presenter = presenter
-            router.viewController = viewController
+            interactor.localDataManager = localDataManager
+            interactor.remoteDataManager = remoteDataManaher
+            remoteDataManaher.remoteRequestHandler = interactor
             
             return viewController
         }

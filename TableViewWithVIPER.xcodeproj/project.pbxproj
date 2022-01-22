@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A385BC31279C640800A81A90 /* HomeRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385BC30279C640800A81A90 /* HomeRemoteDataManager.swift */; };
+		A385BC33279C644000A81A90 /* HomeLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A385BC32279C644000A81A90 /* HomeLocalDataManager.swift */; };
 		A3F34EB8279771F900A38D5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F34EB7279771F900A38D5F /* AppDelegate.swift */; };
 		A3F34EBA279771F900A38D5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F34EB9279771F900A38D5F /* SceneDelegate.swift */; };
 		A3F34EC1279771FB00A38D5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F34EC0279771FB00A38D5F /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A385BC30279C640800A81A90 /* HomeRemoteDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRemoteDataManager.swift; sourceTree = "<group>"; };
+		A385BC32279C644000A81A90 /* HomeLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLocalDataManager.swift; sourceTree = "<group>"; };
 		A3F34EB4279771F900A38D5F /* TableViewWithVIPER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewWithVIPER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F34EB7279771F900A38D5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3F34EB9279771F900A38D5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				A3F34ECC2797735B00A38D5F /* HomeInteractor.swift */,
 				A3F34ECD2797735B00A38D5F /* HomeRouter.swift */,
 				A3F34ED02797735B00A38D5F /* HomeProtocols.swift */,
+				A385BC30279C640800A81A90 /* HomeRemoteDataManager.swift */,
+				A385BC32279C644000A81A90 /* HomeLocalDataManager.swift */,
 			);
 			name = Home;
 			path = ..;
@@ -160,7 +166,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A385BC31279C640800A81A90 /* HomeRemoteDataManager.swift in Sources */,
 				A3F34ED52797735B00A38D5F /* HomePresenter.swift in Sources */,
+				A385BC33279C644000A81A90 /* HomeLocalDataManager.swift in Sources */,
 				A3F34ED32797735B00A38D5F /* HomeRouter.swift in Sources */,
 				A3F34EB8279771F900A38D5F /* AppDelegate.swift in Sources */,
 				A3F34ED62797735B00A38D5F /* HomeProtocols.swift in Sources */,
