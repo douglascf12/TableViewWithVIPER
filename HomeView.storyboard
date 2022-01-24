@@ -16,18 +16,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HomeView" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JH-hr-cQA">
-                                <rect key="frame" x="166" y="250" width="82" height="21"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tDZ-V0-dUl">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="m27-YU-HR0">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="m27-YU-HR0" id="BDc-ML-tR1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cvu-gV-vJS" id="gov-sg-dAp"/>
+                                    <outlet property="delegate" destination="cvu-gV-vJS" id="tUg-ej-UDp"/>
+                                </connections>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" id="Ngs-Mt-UF7">
+                                <rect key="frame" x="0.0" y="429" width="414" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="color" systemColor="linkColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UNI-xT-R35"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tDZ-V0-dUl" firstAttribute="leading" secondItem="UNI-xT-R35" secondAttribute="leading" id="4gF-ti-7A9"/>
+                            <constraint firstItem="UNI-xT-R35" firstAttribute="bottom" secondItem="tDZ-V0-dUl" secondAttribute="bottom" id="LuR-Ul-T4V"/>
+                            <constraint firstItem="UNI-xT-R35" firstAttribute="trailing" secondItem="tDZ-V0-dUl" secondAttribute="trailing" id="OmC-fl-aYk"/>
+                            <constraint firstItem="tDZ-V0-dUl" firstAttribute="top" secondItem="UNI-xT-R35" secondAttribute="top" id="cu6-kw-5NI"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ing-IN-L8R"/>
+                    <connections>
+                        <outlet property="activity" destination="Ngs-Mt-UF7" id="iMZ-W6-Mpe"/>
+                        <outlet property="tableView" destination="tDZ-V0-dUl" id="XPl-dP-1rl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqp-1b-JBi" sceneMemberID="firstResponder"/>
             </objects>
@@ -53,6 +79,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
