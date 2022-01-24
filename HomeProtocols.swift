@@ -41,6 +41,8 @@ protocol HomeInteractorInputProtocol: AnyObject {
     var presenter: HomeInteractorOutputProtocol? { get set }
     var localDataManager: HomeLocalDataManagerInputProtocol? { get set }
     var remoteDataManager: HomeRemoteDataManagerInputProtocol? { get set }
+    
+    func interactorGetData()
 }
 
 protocol HomeDataManagerInputProtocol: AnyObject {
@@ -50,6 +52,8 @@ protocol HomeDataManagerInputProtocol: AnyObject {
 protocol HomeRemoteDataManagerInputProtocol: AnyObject {
     /** Interactor -> RemoteDataManager */
     var remoteRequestHandler: HomeRemoteDataManagerOutputProtocol? { get set }
+    
+    func externalGetData()
 }
 
 protocol HomeRemoteDataManagerOutputProtocol: AnyObject {

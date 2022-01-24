@@ -14,6 +14,10 @@ class HomeInteractor: HomeInteractorInputProtocol {
     weak var presenter: HomeInteractorOutputProtocol?
     var localDataManager: HomeLocalDataManagerInputProtocol?
     var remoteDataManager: HomeRemoteDataManagerInputProtocol?
+    
+    func interactorGetData() {
+        remoteDataManager?.externalGetData()
+    }
 }
 
 extension HomeInteractor: HomeRemoteDataManagerOutputProtocol {

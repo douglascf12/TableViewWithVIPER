@@ -18,7 +18,7 @@ class HomePresenter {
 
 extension HomePresenter: HomePresenterProtocol {
     func viewDidLoad() {
-        print("Olá, quem me chamou foi a View")
+        interactor?.interactorGetData()
     }
 }
 
